@@ -12,7 +12,7 @@ window.SITE = {
   role: "FOTOGRAFIA | VÍDEO | EDIÇÃO",
   avatar: "assets/images/ray (8).jpg", // foto redonda da barra lateral (aparece em todas as telas)
   tagline: "Momentos que contam histórias",
-  instagram: "https://instagram.com/",
+  instagram: "https://www.instagram.com/rayssa.raw/",
   youtube: "https://youtube.com/",
   tiktok: "https://tiktok.com/",
   email: "mailto:contato@exemplo.com",
