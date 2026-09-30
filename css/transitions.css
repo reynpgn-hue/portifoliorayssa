@@ -1,0 +1,9 @@
+/* Transição entre telas: cortina que cobre e revela a página. */
+.curtain{position:fixed;inset:0;z-index:100;background:var(--accent);transform:translateX(-100%);pointer-events:none}
+body.is-entering .curtain{animation:reveal var(--speed) var(--ease) forwards}
+body.is-leaving .curtain{animation:cover var(--speed) var(--ease) forwards}
+@keyframes cover{from{transform:translateX(-100%)}to{transform:translateX(0)}}
+@keyframes reveal{from{transform:translateX(0)}to{transform:translateX(100%)}}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
