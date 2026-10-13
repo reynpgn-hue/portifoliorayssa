@@ -123,7 +123,7 @@ window.SITE = {
         title: "Onde me encontrar",
         items: [
           { label: "E-mail", value: "EMAIL", href: "MAILTO" },
-          { label: "Instagram", value: "@rayssaferreira", href: "INSTAGRAM" },
+          { label: "Instagram", value: "@rayssa.raw", href: "INSTAGRAM" },
           { label: "WhatsApp", value: "Enviar mensagem", href: "WHATSAPP" }
         ]
       }
