@@ -3,18 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Início | Rayssa Nascimento</title>
+<title>Início | Rayssa Ferreira Fotografia</title>
+<meta name="description" content="Rayssa Ferreira Fotografia: fotografia, vídeo e edição.">
+<link rel="icon" href="assets/brand/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500&family=Questrial&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/tokens.css">
 <link rel="stylesheet" href="css/layout.css">
 <link rel="stylesheet" href="css/components.css">
 <link rel="stylesheet" href="css/transitions.css">
+<script>
+  /* A abertura com vídeo só roda na página inicial, uma vez por visita. */
+  (function(){try{
+    var home=document.documentElement;
+    if("index"==="index"&&!sessionStorage.getItem("introDone")&&!matchMedia("(prefers-reduced-motion: reduce)").matches){home.classList.add("intro-active");}
+  }catch(e){}})();
+</script>
 </head>
 <body data-page="index">
 <div id="app"></div>
 <div class="curtain" aria-hidden="true"></div>
 <script src="js/content.js"></script>
 <script src="js/app.js"></script>
+<script src="js/intro.js"></script>
 </body>
 </html>

@@ -1,16 +1,22 @@
-/* Cores, fontes e tempos. Mude aqui para trocar o visual do site inteiro. */
+/* Identidade visual (manual de marca). Mude aqui para trocar o visual do site inteiro. */
 :root{
-  --bg:#26372f; --panel:#33473d; --panel-2:#3f574b;
-  --ink:#f5f1e9; --muted:#c9c3b3; --accent:#b9694a; --line:rgba(245,241,233,.22);
-  --radius:6px; --gap:10px; --topbar-h:64px; --side-w:300px;
-  --font-display:"Bodoni Moda",Georgia,serif;
-  --font-body:Inter,system-ui,sans-serif; --font-nav:Questrial,Inter,sans-serif;
-  --font-hand:"Bodoni Moda",Georgia,serif;
-  --ease:cubic-bezier(.2,.7,.2,1); --speed:.45s;
+  /* Paleta do manual */
+  --creme:#F7F4EC; --oliva:#454C1E; --terracota:#C67C4E; --areia:#A9885D; --grafite:#1F1F21;
+  /* Verdes de apoio (superfícies escuras, como no site de referência) */
+  --verde:#2F4036; --verde-2:#3A4D41; --verde-3:#243229;
+  --texto-escuro:#E9E4D6; --texto-suave:#C4C0AF;
+  --linha:rgba(247,244,236,.16); --linha-clara:rgba(69,76,30,.16);
+
+  --font-display:"DM Serif Display",Georgia,serif;
+  --font-body:Inter,system-ui,sans-serif;
+
+  --topbar-h:78px; --raio:6px; --gap:12px; --maxw:1280px;
+  --ease:cubic-bezier(.2,.7,.2,1); --speed:.5s;
 }
-*{box-sizing:border-box;margin:0}
-html{background:var(--bg)}
-body{font-family:var(--font-body);color:var(--ink);background:var(--bg);line-height:1.6;min-height:100vh}
-img{display:block;max-width:100%}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--creme);scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--grafite);background:var(--creme);line-height:1.65;-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--terracota);outline-offset:3px}

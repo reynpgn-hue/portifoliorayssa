@@ -1,9 +1,32 @@
-/* Transição entre telas: cortina que cobre e revela a página. */
-.curtain{position:fixed;inset:0;z-index:100;background:var(--accent);transform:translateX(-100%);pointer-events:none}
+/* Transição entre telas (cortina) e abertura com vídeo. */
+.curtain{position:fixed;inset:0;z-index:180;background:var(--terracota);transform:translateX(-100%);pointer-events:none}
 body.is-entering .curtain{animation:reveal var(--speed) var(--ease) forwards}
 body.is-leaving .curtain{animation:cover var(--speed) var(--ease) forwards}
 @keyframes cover{from{transform:translateX(-100%)}to{transform:translateX(0)}}
 @keyframes reveal{from{transform:translateX(0)}to{transform:translateX(100%)}}
+
+/* Abertura: o vídeo ocupa a tela, depois diminui até o logo do canto superior esquerdo. */
+html.intro-active{overflow:hidden}
+html.intro-active body::before{content:"";position:fixed;inset:0;z-index:199;background:var(--creme)}
+html.intro-active .brand img{opacity:0}
+.intro{position:fixed;inset:0;z-index:200;background:var(--creme);transition:background .9s var(--ease)}
+.intro__stage{position:absolute;inset:0;display:grid;place-items:center}
+.intro__video{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;transition:opacity .5s .5s}
+.intro.is-shrinking{background:transparent}
+.intro.is-shrinking .intro__ui{opacity:0;pointer-events:none}
+.intro__ui{position:absolute;right:22px;bottom:22px;display:flex;gap:10px;transition:opacity .3s}
+.intro__ui button{padding:10px 18px;border-radius:999px;border:1px solid rgba(69,76,30,.35);background:rgba(247,244,236,.8);color:var(--oliva);font-size:.82rem;font-weight:600;transition:background .25s,color .25s}
+.intro__ui button:hover{background:var(--oliva);color:var(--creme)}
+
 @media (prefers-reduced-motion:reduce){
   *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  .reveal{opacity:1;transform:none}
 }
+html.intro-ready body::before{display:none}
+.intro.is-fading{opacity:0;transition:opacity .6s}
+.intro__fly{position:fixed;z-index:201;transform-origin:0 0;pointer-events:none;transition:transform 1s var(--ease),opacity .4s}
+.intro__fly img{position:absolute;inset:0;width:100%;height:100%}
+.intro__fly .a,.intro__fly .b{transition:opacity .45s .45s}
+.intro__fly .b{opacity:0}
+.intro__fly.is-landing .a{opacity:0}
+.intro__fly.is-landing .b{opacity:1}
