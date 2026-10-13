@@ -23,7 +23,7 @@ const PORTFOLIO_PHOTOS = [
 window.SITE = {
   name: "Rayssa Ferreira",
   avatar: "assets/images/ray (1).jpg",          // foto redonda (Início e Sobre)
-  instagram: "https://instagram.com/",
+  instagram: "https://www.instagram.com/rayssa.raw/",
   youtube: "https://youtube.com/",
   tiktok: "https://tiktok.com/",
   email: "contato@exemplo.com",
